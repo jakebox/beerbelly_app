@@ -39,9 +39,10 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-teal-950 via-green-950 to-emerald-900 h-screen">
-      <div>
-        <div className="h-screen flex items-center justify-center px-10 flex-col">
+    <div className="bg-gradient-to-r from-teal-950 via-green-950 to-emerald-900 min-h-screen w-full flex items-center justify-center">
+      <div className="flex flex-col lg:flex-row w-full max-w-6xl h-full items-center justify-center px-4 py-10">
+        {/* Left: Main Content */}
+        <div className="flex-1 flex flex-col items-center justify-center w-full max-w-xl mb-10 lg:mb-0 mr-5">
           <div className="flex flex-row items-center mb-3">
             <Title c="white" className="text-5xl mr-5">
               Beer Belly
@@ -53,7 +54,7 @@ function App() {
           <Text c="white" mb={22} my={20}>
             Sign up to be notified when our public beta opens, and become one of the first users of Beer Belly.
           </Text>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="w-full flex flex-col items-center">
             <TextInput
               className="text-white"
               placeholder="hello@gmail.com"
@@ -80,6 +81,15 @@ function App() {
           <Text c="white" my={30} size={"sm"} fs={"italic"}>
             © 2024 Null Pointer Industries
           </Text>
+        </div>
+        {/* Right: One Pager Image */}
+        <div className="flex-1 flex items-center justify-center w-full">
+          <img
+            src="./onepage.png"
+            alt="Beer Belly One Pager"
+            className="rounded-lg shadow-lg max-w-full h-auto object-contain bg-white p-2"
+            style={{ maxHeight: '80vh' }}
+          />
         </div>
       </div>
     </div>
